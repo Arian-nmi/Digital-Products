@@ -41,8 +41,3 @@ class GetTokenView(APIView):
 
         token = str(uuid.uuid4())
         return Response({'token': token})
-
-
-
-
-

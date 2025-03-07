@@ -56,8 +56,8 @@ class ProductDetailView(APIView):
 
 
 class FileListView(APIView):
-    def get(self, request, pk):
-        files = File.objects.filter(product_id=pk)
+    def get(self, request, product_id):
+        files = File.objects.filter(product_id=product_id)
         serializer = FileSerializer(files, many=True, context={'request': request})
         return Response(serializer.data)
 
